@@ -14,7 +14,7 @@ app.use(cors({
 
 app.use(express.json());
 
-mongoose.connect('mongodb://127.0.0.1:27017/email_marketing', {
+mongoose.connect('mongodb+srv://yashplw:5OXwSDs9VXBMsG21@cluster0.4t324va.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -35,12 +35,13 @@ const listSchema = new mongoose.Schema({
 const List = mongoose.model('List', listSchema);
 
 const agenda = new Agenda({ 
-  db: { address: 'mongodb://127.0.0.1:27017/email_marketing' },
+  db: { address: 'mongodb+srv://yashplw:5OXwSDs9VXBMsG21@cluster0.4t324va.mongodb.net/test?retryWrites=true&w=majority&appName=Cluster0' },
   processEvery: '30 seconds'
 });
 
 const transporter = nodemailer.createTransport({
-    host: 'gmail.com',
+    host: 'smtp.gmail.com',
+    secure: false,
     port: 587,
     auth: {
         user: 'powerswap.01@gmail.com',
