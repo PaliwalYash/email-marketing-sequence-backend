@@ -44,8 +44,8 @@ const transporter = nodemailer.createTransport({
     secure: false,
     port: 587,
     auth: {
-        user: 'powerswap.01@gmail.com',
-        pass: 'Powerswap@123'
+        user: 'yashplw@gmail.com',
+        pass: 'dczq lnau wwqi octt'
     }
 });
 
@@ -55,7 +55,7 @@ agenda.define('send email', async (job) => {
   
   try {
     const info = await transporter.sendMail({
-      from: 'powerswap.01@gmail.com',
+      from: 'yashplw@gmail.com',
       to: email,
       subject,
       text: body, 
